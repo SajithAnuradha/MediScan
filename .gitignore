@@ -1,0 +1,66 @@
+# Flutter/Dart related
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.packages
+**/.flutter-plugins-dependencies
+**/generated_plugin_registrant.dart
+**/ios/Flutter/Flutter.framework/
+**/ios/Flutter/Flutter.podspec
+**/ios/.symlinks/
+**/ios/Pods/
+**/ios/Runner.xcworkspace/
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Flutter/ephemeral/
+**/.gradle/
+**/.idea/
+**/android/.gradle/
+**/android/app/build/
+**/android/local.properties
+**/android/.idea/
+**/android/*.iml
+**/android/*.apk
+**/android/key.properties
+
+# FastAPI/Python related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+*.env
+*.env.*
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# IDE-specific files
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Virtual environment
+.venv/
