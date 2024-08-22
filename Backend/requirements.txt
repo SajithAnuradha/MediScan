@@ -1,0 +1,9 @@
+fastapi[standard]
+sqlalchemy
+Pillow
+opencv-python
+jwt
+numpy
+bcrypt
+tensorflow
+PyJWT
