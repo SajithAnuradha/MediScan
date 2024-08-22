@@ -1,10 +1,11 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-
+from routers import disease_detection, auth
+from models.base import Base
+from database import engine
 
 app = FastAPI()
 
+app.include_router(disease_detection.router)
+app.include_router(auth.router)
 
-@app.get('/')
-def test():
-    return 'hello world'
+Base.metadata.create_all(engine)
