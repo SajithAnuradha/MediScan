@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mediscan/features/auth/repository/auth_remote_repository.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -46,6 +47,15 @@ class LoginState extends State<Login> {
         passwordError = null;
       }
     });
+
+
+
+    if (emailError == null && passwordError == null) {
+     AuthRemoteRepository().login(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    }
   }
 
   @override

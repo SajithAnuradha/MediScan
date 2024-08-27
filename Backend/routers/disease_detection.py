@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, status, Response, HTTPException
 from schemas import Image
-from ml_models.Skin.skin_predictor import skin_predictor 
+from Ml_Models.Skin.skin_predictor import skin_predictor
 
 router = APIRouter(
     prefix='/detection',
