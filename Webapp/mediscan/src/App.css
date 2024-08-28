@@ -1,0 +1,83 @@
+/* Home.css */
+
+/* Centering container for the entire page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Main container for the content */
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .home h1 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Image styling */
+  .home img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  
+  /* Paragraph text styling */
+  .home p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  .home .btn {
+    display: block;
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for buttons */
+  .home .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Secondary button styling for guest */
+  .home .btn-guest {
+    background-color: transparent;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  /* Hover effect for secondary button */
+  .home .btn-guest:hover {
+    color: #0056b3;
+  }
+  

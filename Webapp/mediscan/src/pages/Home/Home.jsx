@@ -1,6 +1,8 @@
 import React from "react";
+
 import medicalImage from '../../assets/images/Front_img.png'
 import './Home.css';
+import { Link } from "react-router-dom"; 
 
 const Home = () => {
   return (
@@ -12,10 +14,10 @@ const Home = () => {
         
         <div className="options-container">
           <p>If you already registered you can continue here</p>
-          <button className="glow-button">Continue as a User</button>
+          <Link to="/login" className="glow-button">Continue as a User</Link>
           
           <p>If you are a guest continue here:</p>
-          <button className="glow-button guest-button">Continue as a Guest</button>
+          < Link to="/" className="glow-button guest-button">Continue as a Guest</Link>
         </div>
       </div>
     </div>
@@ -23,3 +25,5 @@ const Home = () => {
 }
 
 export default Home
+
+

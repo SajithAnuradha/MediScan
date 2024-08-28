@@ -6,12 +6,12 @@ import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-  const url = "http://localhost:5000";
+  const url = "http://localhost:8000";
 
-  const [token, seToken] = useState("");
+  const [token, setToken] = useState("");
   const [user, setUser] = useState("");
 
-  const contextValue = { url, token, user, seToken, setUser };
+  const contextValue = { url, token, user, setToken, setUser };
 
   return (
     <StoreContext.Provider value={contextValue}>

@@ -3,12 +3,49 @@ from fastapi.responses import JSONResponse
 from routers import disease_detection, auth
 from models.base import Base
 from database import engine
+from fastapi.middleware.cors import CORSMiddleware
+from tensorflow.keras.models import load_model
+from fastapi import APIRouter, File, UploadFile, HTTPException, Depends
+from tensorflow.keras.utils import img_to_array
+import io
+from PIL import Image
+from pathlib import Path
+from Ml_Models.BrainTumour.brain_tumour_model import preprocess_image,result
+
+UPLOAD_DIR=Path()/'uploads'
 
 app = FastAPI()
 
-app.include_router(disease_detection.router)
-app.include_router(auth.router)
+best_model = load_model(filepath='cnn-parameters-improvement-02-0.87.keras')
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this to restrict the allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],  # This allows all methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],  # This allows all headers
+)
+# app.include_router(disease_detection.router)
+# app.include_router(auth.router)
+
+
+
+
+
+
+@app.post('/brain')
+async def detection(file_upload:UploadFile):
+    
+    data=await file_upload.read()
+    save_to=UPLOAD_DIR/file_upload.filename
+    with open(save_to,'wb') as f:
+        f.write(data)
+    print(save_to)
+    pre=preprocess_image(save_to)
+    response=result(best_model,pre)
+    print(response)
+  
+    return ""
 Base.metadata.create_all(engine)
 
 # Custom 404 error handler

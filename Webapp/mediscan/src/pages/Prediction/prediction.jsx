@@ -2,6 +2,12 @@ import React from "react";
 import './Prediction.css';
 
 
+
+
+
+
+
+
 const Prediction = () => {
   return(
     <div className="prediction-container">

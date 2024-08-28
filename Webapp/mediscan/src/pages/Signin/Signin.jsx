@@ -15,8 +15,8 @@ const Signin = () => {
     password: "",
     email: "",
     age: "",
-    address: "",
-    phone: "",
+    phonenumber: "",
+    gender: "",
   });
 
   const onChangeHandler = (event) => {
@@ -25,28 +25,23 @@ const Signin = () => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
-  
 
-  // return (
-  //   <div className="sign">
-  //     <h2>Signin</h2>
-  //     <form >
-  //       <input
-  //         type="text"
-  //         placeholder="Username"
-  //         // value={username}
-  //         // onChange={(e) => setUsername(e.target.value)}
-  //       />
-  //       <input
-  //         type="password"
-  //         placeholder="Password"
-  //         // value={password}
-  //         // onChange={(e) => setPassword(e.target.value)}
-  //       />
-  //       <button type="submit">Sign In</button>
-  //     </form>
-  //   </div>
-  // );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(data);
+    const response = await axios.post(`${url}/auth/signup`, data);
+
+    console.log(response);
+    if (response.status === 201) {
+      console.log(response.data);
+      setToken(response.data.token);
+      setUser(response.data.user);
+    } else {
+      console.log("error");
+    }
+  };
+
+ 
   return (
     <div className="signup-container">
       {/* App Heading */}
@@ -84,6 +79,7 @@ const Signin = () => {
             value={data.email}
             placeholder="Email ID"
             className="input-field"
+            onChange={onChangeHandler}
           />
           <input
             type="text"
@@ -91,6 +87,7 @@ const Signin = () => {
             value={data.name}
             placeholder="Full Name"
             className="input-field"
+            onChange={onChangeHandler}
           />
           <input
             type="tel"
@@ -98,6 +95,7 @@ const Signin = () => {
             value={data.phone}
             placeholder="Phone Number"
             className="input-field"
+           onChange={onChangeHandler}
           />
           <input
             type="number"
@@ -105,6 +103,7 @@ const Signin = () => {
             value={data.age}
             placeholder="Age"
             className="input-field"
+            onChange={onChangeHandler}
           />
           <select
             name="gender"
@@ -122,6 +121,7 @@ const Signin = () => {
             value={data.password}
             placeholder="Password"
             className="input-field"
+           onChange={onChangeHandler}
           />
           <input
             type="password"
@@ -129,6 +129,7 @@ const Signin = () => {
             value={data.confirmPassword}
             placeholder="Confirm Password"
             className="input-field"
+           onChange={onChangeHandler}
           />
           <button type="submit" className="signup-button">Signup</button>
         </form>
@@ -138,6 +139,10 @@ const Signin = () => {
           <button className="login-button">Login</button>
         </div>
       </div>
+
+  
+
+  
     </div>
   );
 };
