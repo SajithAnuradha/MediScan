@@ -1,0 +1,162 @@
+/* Signup.css */
+
+/* Container for the signup page */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #f7f8fa;
+  }
+  
+  /* App Heading */
+  .app-heading {
+    font-size: 48px;
+    color: #3b82f6;
+    margin: 40px 0;
+    text-shadow: 0px 0px 15px rgba(59, 130, 246, 0.75); /* Blue glow effect */
+    text-align: center;
+  }
+  
+  /* Signup Card */
+  .signup-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .signup-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0px 0px 30px rgba(59, 130, 246, 0.5); /* Blue glow on hover */
+  }
+  
+  /* Signup Image */
+  .signup-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .signup-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.4); /* Subtle glow effect */
+  }
+  
+  /* Signup Title */
+  .signup-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #1e3a8a; /* Darker blue */
+    text-shadow: 0px 0px 8px rgba(59, 130, 246, 0.6); /* Blue glow */
+  }
+  
+  /* Social Signup Buttons */
+  .social-signup-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  
+  .social-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(59, 130, 246, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .social-button:hover {
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Stronger glow on hover */
+  }
+  
+  .social-icon {
+    width: 30px;
+  }
+  
+  /* Register Text */
+  .register-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  .input-field {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #3b82f6;
+    box-shadow: 0px 0px 10px rgba(59, 130, 246, 0.5); /* Blue glow on focus */
+    outline: none;
+  }
+  
+  /* Signup Button */
+  .signup-button {
+    width: 100%;
+    padding: 15px;
+    margin: 30px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: #3b82f6;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 0px 10px rgba(59, 130, 246, 0.5); /* Initial glow */
+  }
+  
+  .signup-button:hover {
+    background-color: #2563eb;
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.7); /* Stronger glow on hover */
+  }
+  
+  /* Login Redirect */
+  .login-redirect {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .login-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #3b82f6;
+    background-color: #3b82f6;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 0px 10px rgba(59, 130, 246, 0.5); /* Initial glow */
+  }
+  
+  .login-button:hover {
+    background-color: #2563eb;
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.7); /* Stronger glow on hover */
+  }
+  
