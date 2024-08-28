@@ -10,8 +10,8 @@ const Signin = () => {
     password: "",
     email: "",
     age: "",
-    address: "",
-    phone: "",
+    phonenumber: "",
+    gender: "",
   });
 
   const onChangeHandler = (event) => {
@@ -20,22 +20,75 @@ const Signin = () => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(data);
+    const response = await axios.post(`${url}/auth/signup`, data);
+
+    console.log(response);
+    if (response.status === 201) {
+      console.log(response.data);
+      setToken(response.data.token);
+      setUser(response.data.user);
+    } else {
+      console.log("error");
+    }
+  };
+
   return (
     <div className="sign">
       <h2>Signin</h2>
       <form onSubmit={handleSubmit}>
         <input
+          name="name"
           type="text"
           placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={data.name}
+          onChange={onChangeHandler}
+          required
         />
         <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name="age"
+          type="number"
+          placeholder="age"
+          value={data.age}
+          onChange={onChangeHandler}
+          required
         />
+
+        <input
+          name="email"
+          type="text"
+          placeholder="email"
+          value={data.email}
+          onChange={onChangeHandler}
+          required
+        />
+        <input
+          name="phonenumber"
+          type="text"
+          placeholder="Phonenumber"
+          value={data.phonenumber}
+          onChange={onChangeHandler}
+          required
+        />
+        <input
+          name="gender"
+          type="text"
+          placeholder="gender"
+          value={data.gender}
+          onChange={onChangeHandler}
+          required
+        />
+        <input
+          name="password"
+          type="text"
+          placeholder="Password"
+          value={data.password}
+          onChange={onChangeHandler}
+          required
+        />
+
         <button type="submit">Sign In</button>
       </form>
     </div>

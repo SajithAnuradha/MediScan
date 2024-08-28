@@ -3,9 +3,17 @@ from fastapi.responses import JSONResponse
 from routers import disease_detection, auth
 from models.base import Base
 from database import engine
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this to restrict the allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],  # This allows all methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],  # This allows all headers
+)
 app.include_router(disease_detection.router)
 app.include_router(auth.router)
 

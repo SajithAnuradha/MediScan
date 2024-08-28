@@ -5,6 +5,8 @@ class UserCreate(BaseModel):
     email: str
     password: str
     age: int
+    phonenumber:str
+    gender:str
     
 
 class UserLogin(BaseModel):
