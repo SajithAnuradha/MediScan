@@ -7,7 +7,12 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const url = "http://localhost:5000";
-  const contextValue = { url };
+
+  const [token, seToken] = useState("");
+  const [user, setUser] = useState("");
+
+  const contextValue = { url, token, user, seToken, setUser };
+
   return (
     <StoreContext.Provider value={contextValue}>
       {props.children}

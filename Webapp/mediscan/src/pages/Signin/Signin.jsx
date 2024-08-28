@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useContext } from "react";
+import { StoreContext } from "../../context/StoreContext";
 
 const Signin = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const { url, setToken, setUser } = useContext(StoreContext);
+  const [data, setData] = useState({
+    name: "",
+    password: "",
+    email: "",
+    age: "",
+    address: "",
+    phone: "",
+  });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle sign-in logic here, like sending data to a server
-    console.log(`Signing in with ${username} and ${password}`);
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData((data) => ({ ...data, [name]: value }));
   };
 
   return (
