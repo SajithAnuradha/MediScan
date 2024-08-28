@@ -6,11 +6,16 @@ import Login from "../pages/Login/Login";
 import History from "../pages/History/History";
 import Prediction from "../pages/Prediction/prediction";
 import Add from "../pages/Add/Add";
+import Home from "../pages/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
   },
   {
     path: "/signin",

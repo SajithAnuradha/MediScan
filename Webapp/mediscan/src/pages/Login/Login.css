@@ -6,15 +6,19 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-  }
+}
   
 .app-heading {
     font-size: 48px; /* Large font size */
     color: #3b82f6; /* Blue color for the heading */
     margin: 40px 0; /* Space around the heading */
-    text-shadow: 0px 0px 10px rgba(59, 130, 246, 0.5); /* Blue glow effect */
+    text-shadow: none; /* No glow initially */
     text-align: center; /* Centered text */
-  }
+}
+  
+.app-heading:hover {
+    text-shadow: 0px 0px 15px rgba(59, 130, 246, 0.8); /* Blue glow effect on hover */
+}
   
 .login-card {
     width: 100%;
@@ -22,54 +26,76 @@
     padding: 40px; /* Padding inside the card */
     background: #fff; /* White background */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Shadow for card */
-  }
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle initial shadow */
+}
+  
+.login-card:hover {
+    box-shadow: 0px 0px 40px rgba(59, 130, 246, 0.6); /* Blue glow effect on hover */
+}
   
 .login-image {
     display: flex;
     justify-content: center;
     margin-bottom: 30px; /* Space below the image */
-  }
+}
   
 .login-image img {
     max-width: 100%;
     height: auto;
     object-fit: cover; /* Cover the area without stretching */
     border-radius: 10px; /* Rounded corners for image */
-  }
+    box-shadow: none; /* No glow initially */
+}
+
+.login-image img:hover {
+    box-shadow: 0px 0px 25px rgba(59, 130, 246, 0.8); /* Enhanced blue glow on hover */
+}
   
 .login-title {
     text-align: center;
     margin-bottom: 30px; /* Space below the title */
     font-size: 32px; /* Font size for title */
-  }
+    color: #3b82f6; /* Blue color for title */
+    text-shadow: none; /* No glow initially */
+}
+
+.login-title:hover {
+    text-shadow: 0px 0px 10px rgba(59, 130, 246, 0.6); /* Blue glow on hover */
+}
   
 .social-login-buttons {
     display: flex;
     justify-content: space-around;
     margin-bottom: 30px; /* Space below the buttons */
-  }
+}
   
 .social-button {
     width: 60px; /* Size of social buttons */
     height: 60px;
     border-radius: 50%;
-    border: 1px solid #ccc; /* Border color */
+    border: 2px solid #3b82f6; /* Blue border color */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff; /* Background color */
-  }
+    box-shadow: none; /* No glow initially */
+}
+
+.social-button:hover {
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Enhanced blue glow on hover */
+    border-color: #2563eb; /* Darker blue border on hover */
+}
   
 .social-icon {
     width: 30px; /* Size of social icons */
-  }
+}
   
 .login-text {
     text-align: center;
     margin-bottom: 30px; /* Space below the text */
     font-size: 18px; /* Font size for text */
-  }
+    color: #333; /* Text color */
+}
   
 .input-field {
     width: 100%;
@@ -78,7 +104,12 @@
     border-radius: 5px; /* Rounded corners */
     border: 1px solid #ccc; /* Border color */
     font-size: 16px; /* Font size for input text */
-  }
+    box-shadow: none; /* No glow initially */
+}
+
+.input-field:hover {
+    box-shadow: inset 0px 0px 10px rgba(59, 130, 246, 0.4); /* Enhanced blue glow on hover */
+}
   
 .login-button {
     width: 100%;
@@ -90,37 +121,38 @@
     color: #fff; /* White text */
     font-size: 20px; /* Font size for button text */
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth background color transition */
-  }
-  
+    box-shadow: none; /* No glow initially */
+}
+
 .login-button:hover {
     background-color: #2563eb; /* Darker blue on hover */
-  }
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.8); /* Enhanced blue glow on hover */
+}
   
 .signup-redirect {
     text-align: center;
     margin-top: 20px; /* Space between the form and the signup redirect */
-  }
+}
   
 .signup-text {
     font-size: 16px; /* Font size for signup prompt */
     color: #333; /* Darker text color for readability */
     margin-bottom: 10px; /* Space below the text */
-  }
+}
   
 .signup-button {
     padding: 10px 20px;
     border-radius: 5px;
-    border: 1px solid #3b82f6; /* Blue border for button */
+    border: 2px solid #3b82f6; /* Blue border for button */
     background-color: #3b82f6; /* Blue background */
     color: #fff;
     font-size: 16px; /* Font size for button */
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-  }
-  
+    box-shadow: none; /* No glow initially */
+}
+
 .signup-button:hover {
     background-color: #2563eb; /* Darker blue on hover */
     border-color: #2563eb; /* Matching border color on hover */
-  }
-  
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Enhanced blue glow on hover */
+}
