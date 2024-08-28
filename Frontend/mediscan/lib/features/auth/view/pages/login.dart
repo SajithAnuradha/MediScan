@@ -48,10 +48,8 @@ class LoginState extends State<Login> {
       }
     });
 
-
-
     if (emailError == null && passwordError == null) {
-     AuthRemoteRepository().login(
+      AuthRemoteRepository().login(
         email: emailController.text,
         password: passwordController.text,
       );
@@ -78,7 +76,7 @@ class LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(
-                  'images/Login.svg',
+                  'assets/images/Login.svg',
                   semanticsLabel: 'My SVG Image',
                   height: 200,
                 ),
@@ -97,7 +95,7 @@ class LoginState extends State<Login> {
                 const SizedBox(height: 20),
                 TextField(
                   decoration: InputDecoration(
-                    prefixIcon: SvgPicture.asset('images/email-icon.svg',
+                    prefixIcon: SvgPicture.asset('assets/images/email-icon.svg',
                         height: 5, width: 5, fit: BoxFit.scaleDown),
                     labelText: 'Email ID',
                     border: OutlineInputBorder(
@@ -111,8 +109,11 @@ class LoginState extends State<Login> {
                 TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    prefixIcon: SvgPicture.asset('images/password-icon.svg',
-                        height: 5, width: 5, fit: BoxFit.scaleDown),
+                    prefixIcon: SvgPicture.asset(
+                        'assets/images/password-icon.svg',
+                        height: 5,
+                        width: 5,
+                        fit: BoxFit.scaleDown),
                     labelText: 'Password',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -126,6 +127,7 @@ class LoginState extends State<Login> {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
+                    _submit();
                     // Handle login logic
                   },
                   style: ElevatedButton.styleFrom(
@@ -147,21 +149,21 @@ class LoginState extends State<Login> {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      icon: SvgPicture.asset('images/Google.svg'),
+                      icon: SvgPicture.asset('assets/images/Google.svg'),
                       onPressed: () {
                         // Handle Google login logic
                       },
                     ),
                     const SizedBox(width: 10),
                     IconButton(
-                      icon: Image.asset('images/Fb.png'),
+                      icon: Image.asset('assets/images/Fb.png'),
                       onPressed: () {
                         // Handle Facebook login logic
                       },
                     ),
                     const SizedBox(width: 10),
                     IconButton(
-                      icon: SvgPicture.asset('images/Apple.svg'),
+                      icon: SvgPicture.asset('assets/images/Apple.svg'),
                       onPressed: () {
                         // Handle Apple login logic
                       },
