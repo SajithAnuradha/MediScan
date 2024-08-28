@@ -1,0 +1,66 @@
+/* History.css */
+
+/* Container */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f8fa;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  /* Heading */
+  .history-heading {
+    font-size: 28px;
+    color: #1e3a8a;
+    text-shadow: 0px 0px 10px rgba(59, 130, 246, 0.7); /* Blue glow */
+    margin-bottom: 20px;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.3); /* Blue glow */
+    transition: box-shadow 0.3s ease-in-out;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .profile-section:hover {
+    box-shadow: 0px 0px 30px rgba(59, 130, 246, 0.6); /* Stronger blue glow on hover */
+  }
+  
+  /* Profile Image */
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.5); /* Blue glow around image */
+  }
+  
+  /* Profile Name */
+  .profile-name {
+    font-size: 22px;
+    color: #1e3a8a;
+    text-shadow: 0px 0px 10px rgba(59, 130, 246, 0.7); /* Blue glow on name */
+    margin-bottom: 10px;
+  }
+  
+  /* Profile Details */
+  .profile-details p {
+    font-size: 16px;
+    color: #3b82f6;
+    margin: 5px 0;
+  }
+  
+  .profile-details i {
+    margin-right: 8px;
+    color: #3b82f6;
+  }
+  

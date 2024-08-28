@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { StoreContext } from "../../context/StoreContext";
+import './Add.css';
 
 const Add = () => {
   const { url, token } = useContext(StoreContext);
@@ -28,14 +29,7 @@ const Add = () => {
     const formData = new FormData();
     formData.append("file_upload", image);
 
-    // const requestOptions = {
-    //   method: "POST",
-    //   body: formData,
-    // };
-    // fetch(`${url}/brain`, requestOptions)
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data))
-    //   .catch((error) => console.log(error));
+   
 
     try {
       const endpoint = `${url}/brain`;
@@ -54,9 +48,10 @@ const Add = () => {
     }
   };
 
+
   return (
-    <div>
-      <h2>Add</h2>
+    <div className="add-container">
+      <h1 className="page-title">Import Photo</h1>
       <form onSubmit={onSubmitHandler}>
         <input
           type="text"
@@ -80,8 +75,9 @@ const Add = () => {
           accept=".jpg, .jpeg, .png"
           required
         />
-        <button type="submit">Submit</button>
+        <button  className="generate-report-button" type="submit">Submit</button>
       </form>
+
     </div>
   );
 };

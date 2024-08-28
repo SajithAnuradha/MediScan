@@ -1,83 +1,102 @@
 /* Home.css */
 
-/* Centering container for the entire page */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f2f5;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Main container for the content */
-  .home {
+
+/* Main container */
+.home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    background-color: #ffffff;
+    justify-content: center;
+    background-color: #f0f4ff; /* Light blue background */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Title styling */
-  .home h1 {
-    margin: 0;
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  /* Image styling */
-  .home img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
-  }
-  
-  /* Paragraph text styling */
-  .home p {
-    margin: 10px 0;
-    color: #555;
-    font-size: 16px;
-  }
-  
-  /* Button styling */
-  .home .btn {
-    display: block;
-    width: 80%;
-    padding: 12px;
-    margin: 10px 0;
-    background-color: #007bff;
+    height: 100vh;
+}
+
+/* App Title */
+.app-title {
+    font-size: 32px;
+    color: #2563eb; /* Stronger blue color */
+    text-shadow: none; /* No glow initially */
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.app-title:hover {
+    text-shadow: 0px 0px 15px rgba(37, 99, 235, 0.7); /* Blue glow effect on hover */
+}
+
+/* Glowing Content Box */
+.content-box {
+    background-color: #ffffff;
+    border-radius: 25px; /* Curved corners */
+    padding: 40px; /* Larger padding for larger card effect */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+    width: 90%;
+    max-width: 550px; /* Larger max-width for bigger card */
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+}
+
+.content-box:hover {
+    box-shadow: 0px 0px 40px rgba(37, 99, 235, 0.5); /* Stronger blue glow on hover */
+}
+
+/* Image */
+.home-image {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: none; /* No glow initially */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+}
+
+.home-image:hover {
+    box-shadow: 0px 0px 20px rgba(37, 99, 235, 0.5); /* Blue glow effect on hover */
+}
+
+/* Options Container */
+.options-container {
+    text-align: center;
+    width: 100%;
+}
+
+/* Paragraph Text */
+.options-container p {
+    font-size: 18px;
+    color: #2563eb;
+    margin: 15px 0;
+}
+
+/* Glowing Button */
+.glow-button {
+    background-color: #2563eb;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 15px 0;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover effect for buttons */
-  .home .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Secondary button styling for guest */
-  .home .btn-guest {
+    box-shadow: none; /* No glow initially */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+}
+
+.glow-button:hover {
+    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Strong blue glow on hover */
+}
+
+/* Guest Button */
+.guest-button {
     background-color: transparent;
-    color: #007bff;
-    text-decoration: underline;
-  }
-  
-  /* Hover effect for secondary button */
-  .home .btn-guest:hover {
-    color: #0056b3;
-  }
-  
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    box-shadow: none; /* No glow initially */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+}
+
+.guest-button:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Initial blue glow on hover */
+}

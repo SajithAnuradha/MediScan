@@ -1,0 +1,81 @@
+/* Add.css */
+
+/* Container */
+.add-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f7f8fa;
+  }
+  
+  /* Page Title */
+  .page-title {
+    font-size: 24px;
+    color: #1e3a8a;
+    text-shadow: 0px 0px 10px rgba(59, 130, 246, 0.7); /* Blue glow */
+    margin-bottom: 30px;
+  }
+  
+  /* Image Upload Box */
+  .image-upload-box {
+    width: 80%;
+    max-width: 350px;
+    height: 350px;
+    border: 2px solid #3b82f6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.3); /* Initial blue glow */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .image-upload-box:hover {
+    box-shadow: 0px 0px 30px rgba(59, 130, 246, 0.6); /* Stronger blue glow on hover */
+  }
+  
+  /* Upload Placeholder */
+  .image-upload-placeholder {
+    text-align: center;
+    color: #3b82f6;
+  }
+  
+  .upload-icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-icon-text i {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .upload-icon-text span {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  /* Generate Report Button */
+  .generate-report-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(59, 130, 246, 0.5); /* Initial blue glow */
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .generate-report-button:hover {
+    background-color: #2563eb;
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.7); /* Stronger blue glow on hover */
+  }
+  
