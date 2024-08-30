@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import History from "../pages/History/History";
 import Prediction from "../pages/Prediction/Prediction";
 import Add from "../pages/Add/Add";
+import Start from "../pages/Start/Start";
 import Home from "../pages/Home/Home";
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Start />,
       },
     ],
   },
@@ -40,8 +41,16 @@ const router = createBrowserRouter([
     element: <Prediction />,
   },
   {
-    path: "/upload",
-    element: <Add />,
+    path: "/ct",
+    element: <Add title={"CT SCAN"} />,
+  },
+  {
+    path: "/mri",
+    element: <Add title={"MRI SCAN"} />,
+  },
+  {
+    path: "/skin",
+    element: <Add title={"SKIN SCAN"} />,
   },
 ]);
 

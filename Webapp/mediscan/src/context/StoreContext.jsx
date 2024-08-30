@@ -11,7 +11,17 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
   const [user, setUser] = useState("");
 
-  const contextValue = { url, token, user, setToken, setUser };
+  const [result, setResult] = useState("");
+
+  const contextValue = {
+    url,
+    token,
+    user,
+    setToken,
+    setUser,
+    setResult,
+    result,
+  };
 
   return (
     <StoreContext.Provider value={contextValue}>

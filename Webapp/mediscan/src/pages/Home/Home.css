@@ -1,102 +1,89 @@
 /* Home.css */
 
-
-/* Main container */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f4ff; /* Light blue background */
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    height: 100vh;
-}
-
-/* App Title */
-.app-title {
-    font-size: 32px;
-    color: #2563eb; /* Stronger blue color */
-    text-shadow: none; /* No glow initially */
-    margin-bottom: 20px;
-    margin-top: 50px;
-}
-
-.app-title:hover {
-    text-shadow: 0px 0px 15px rgba(37, 99, 235, 0.7); /* Blue glow effect on hover */
-}
-
-/* Glowing Content Box */
-.content-box {
-    background-color: #ffffff;
-    border-radius: 25px; /* Curved corners */
-    padding: 40px; /* Larger padding for larger card effect */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
-    width: 90%;
-    max-width: 550px; /* Larger max-width for bigger card */
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
-}
-
-.content-box:hover {
-    box-shadow: 0px 0px 40px rgba(37, 99, 235, 0.5); /* Stronger blue glow on hover */
-}
-
-/* Image */
-.home-image {
-    width: 100%;
-    max-width: 350px;
+  }
+  
+  .home-title {
+    font-size: 24px;
     margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: none; /* No glow initially */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
-}
-
-.home-image:hover {
-    box-shadow: 0px 0px 20px rgba(37, 99, 235, 0.5); /* Blue glow effect on hover */
-}
-
-/* Options Container */
-.options-container {
-    text-align: center;
-    width: 100%;
-}
-
-/* Paragraph Text */
-.options-container p {
+    font-weight: bold;
+  }
+  
+  .user-greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .greeting-text {
+    text-align: left;
+  }
+  
+  .greeting-text h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .greeting-text p {
+    margin: 0;
+    color: gray;
+  }
+  
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .checker-section {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .checker-section h3 {
+    margin-bottom: 10px;
     font-size: 18px;
-    color: #2563eb;
-    margin: 15px 0;
-}
-
-/* Glowing Button */
-.glow-button {
-    background-color: #2563eb;
-    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .checker-card {
+    background-color: #1E90FF;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checker-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .checker-text {
+    flex: 1;
+  }
+  
+  .checker-button {
+    background-color: white;
+    color: #1E90FF;
     border: none;
-    border-radius: 25px;
-    padding: 12px 25px;
-    font-size: 18px;
-    margin: 15px 0;
+    border-radius: 20px;
+    padding: 5px 15px;
     cursor: pointer;
-    box-shadow: none; /* No glow initially */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
-}
-
-.glow-button:hover {
-    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Strong blue glow on hover */
-}
-
-/* Guest Button */
-.guest-button {
-    background-color: transparent;
-    color: #2563eb;
-    border: 2px solid #2563eb;
-    box-shadow: none; /* No glow initially */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-}
-
-.guest-button:hover {
-    background-color: #2563eb;
-    color: #ffffff;
-    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Initial blue glow on hover */
-}
+    font-weight: bold;
+  }
+  
+  .checker-button:hover {
+    background-color: #f0f0f0;
+  }
+  

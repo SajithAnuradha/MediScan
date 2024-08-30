@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
-import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
-import './Signin.css';
-import doctorsImage from '../../assets/images/2.1.jpg'
-import google_icon from '../../assets/images/google_img.png'
-import facebook_icon from '../../assets/images/facebook_img.png'
-import apple_icon from '../../assets/images/apple_img.png'
+import "./Signin.css";
+import doctorsImage from "../../assets/images/2.1.jpg";
+import google_icon from "../../assets/images/google_img.png";
+import facebook_icon from "../../assets/images/facebook_img.png";
+import apple_icon from "../../assets/images/apple_img.png";
 
 const Signin = () => {
   const { url, setToken, setUser } = useContext(StoreContext);
@@ -17,46 +16,46 @@ const Signin = () => {
     age: "",
     phonenumber: "",
     gender: "",
+    confirmPassword: "",
   });
 
   const onChangeHandler = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setData((data) => ({ ...data, [name]: value }));
+    const { name, value } = event.target;
+    setData((prevData) => ({ ...prevData, [name]: value }));
   };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(data);
-    const response = await axios.post(`${url}/auth/signup`, data);
 
-    console.log(response);
-    if (response.status === 201) {
-      console.log(response.data);
-      setToken(response.data.token);
-      setUser(response.data.user);
-    } else {
-      console.log("error");
+    if (data.password !== data.confirmPassword) {
+      console.log("Passwords do not match");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${url}/auth/signup`, data);
+
+      if (response.status === 201) {
+        console.log(response.data);
+        setToken(response.data.token);
+        setUser(response.data.user);
+      } else {
+        console.log("Error: ", response.status);
+      }
+    } catch (error) {
+      console.error("Error submitting form: ", error);
     }
   };
 
- 
   return (
     <div className="signup-container">
-      {/* App Heading */}
-      <h1 className="app-heading">Mediscan</h1>
-      
       <div className="signup-card">
-        {/* Top Image */}
         <div className="signup-image">
-          <img src={doctorsImage} alt="Doctors" className="image" />
+          <img src={doctorsImage} alt="Doctors" />
         </div>
 
-        {/* Sign Up Title */}
         <h2 className="signup-title">Sign up</h2>
 
-        {/* Social Sign-up Buttons */}
         <div className="social-signup-buttons">
           <button className="social-button">
             <img src={google_icon} alt="Google" className="social-icon" />
@@ -71,8 +70,7 @@ const Signin = () => {
 
         <div className="register-text">Or, Register with an Email</div>
 
-        {/* Input Fields */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="email"
             name="email"
@@ -80,6 +78,7 @@ const Signin = () => {
             placeholder="Email ID"
             className="input-field"
             onChange={onChangeHandler}
+            autoComplete="off"
           />
           <input
             type="text"
@@ -88,14 +87,16 @@ const Signin = () => {
             placeholder="Full Name"
             className="input-field"
             onChange={onChangeHandler}
+            autoComplete=""
           />
           <input
             type="tel"
-            name="phone"
-            value={data.phone}
+            name="phonenumber"
+            value={data.phonenumber}
             placeholder="Phone Number"
             className="input-field"
-           onChange={onChangeHandler}
+            onChange={onChangeHandler}
+            autoComplete=""
           />
           <input
             type="number"
@@ -104,11 +105,13 @@ const Signin = () => {
             placeholder="Age"
             className="input-field"
             onChange={onChangeHandler}
+            autoComplete=""
           />
           <select
             name="gender"
             value={data.gender}
             className="input-field"
+            onChange={onChangeHandler}
           >
             <option value="">Gender</option>
             <option value="male">Male</option>
@@ -121,7 +124,7 @@ const Signin = () => {
             value={data.password}
             placeholder="Password"
             className="input-field"
-           onChange={onChangeHandler}
+            onChange={onChangeHandler}
           />
           <input
             type="password"
@@ -129,20 +132,19 @@ const Signin = () => {
             value={data.confirmPassword}
             placeholder="Confirm Password"
             className="input-field"
-           onChange={onChangeHandler}
+            onChange={onChangeHandler}
+            autoComplete=""
           />
-          <button type="submit" className="signup-button">Signup</button>
+          <button type="submit" className="signup-button">
+            Signup
+          </button>
         </form>
-        
+
         <div className="login-redirect">
           <div className="login-text">Already have an account?</div>
           <button className="login-button">Login</button>
         </div>
       </div>
-
-  
-
-  
     </div>
   );
 };
