@@ -1,5 +1,4 @@
-import cv2
-import numpy as np
+
 
 def preprocess_skin_disease_image(img_path):
     # Load the image and preprocess it to (240, 240, 3)

@@ -23,7 +23,7 @@ def signup(user: UserCreate, db: Session=Depends(get_db)): #dependency. DB calle
         
     
     hased_pw = bcrypt.hashpw(user.password.encode(), bcrypt.gensalt())
-    user_db = User(user_id=str(uuid.uuid4()), email=user.email, password=hased_pw, name=user.name, age=user.age,gender=user.gender,phonenumber=user.phonenumber)
+    user_db = User(user_id=str(uuid.uuid4()), email=user.email, password=hased_pw, name=user.name, age=user.age)
 
     db.add(user_db)
     db.commit()

@@ -4,6 +4,15 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+# class User(Base):
+#     __tablename__ = 'users'
+
+#     user_id = Column(TEXT, primary_key=True)
+#     name = Column(VARCHAR(100))
+#     email = Column(VARCHAR(100))
+#     password = Column(LargeBinary)
+#     age = Column(Integer)
+
 class Record(Base):
     __tablename__ = 'records'
 
@@ -19,5 +28,3 @@ class User(Base):
     email = Column(VARCHAR(100))
     password = Column(LargeBinary)
     age = Column(Integer)
-    gender=Column(VARCHAR(50))
-    phonenumber=Column(VARCHAR(100))

@@ -7,4 +7,3 @@ numpy
 bcrypt
 tensorflow
 PyJWT
-SQLAlchemy
