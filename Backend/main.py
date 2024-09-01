@@ -33,7 +33,7 @@ app.add_middleware(
 
 
 
-@app.post('/brain')
+@app.post('/mri')
 async def detection(file_upload:UploadFile):
     
     data=await file_upload.read()
@@ -43,9 +43,12 @@ async def detection(file_upload:UploadFile):
     print(save_to)
     pre=preprocess_image(save_to)
     response=result(best_model,pre)
-    print(response)
+    if (response[0] >0.5):
+        return "You have a BRAIN TUMOUR"
+    else :
+        return "You have not a BRAIN TUMOUR"
   
-    return ""
+    
 Base.metadata.create_all(engine)
 
 # Custom 404 error handler

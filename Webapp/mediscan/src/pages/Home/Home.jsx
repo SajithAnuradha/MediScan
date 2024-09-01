@@ -40,7 +40,7 @@ const Home = () => {
           <div className="checker-text">
             Upload your to skin photo to get a detailed diagnosis report.
           </div>
-          <Link to="/ct" className="checker-button">
+          <Link to="/skin" className="checker-button">
             Check
           </Link>
         </div>
