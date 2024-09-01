@@ -10,7 +10,7 @@ from tensorflow.keras.utils import img_to_array
 import io
 from PIL import Image
 from pathlib import Path
-from Ml_Models.BrainTumour.brain_tumour_model import preprocess_image,result
+from ml_models.BrainTumour.brain_tumour_model import preprocess_image,result
 
 UPLOAD_DIR=Path()/'uploads'
 
@@ -35,7 +35,7 @@ app.add_middleware(
 
 @app.post('/brain')
 async def detection(file_upload:UploadFile):
-    
+    print('hi')
     data=await file_upload.read()
     save_to=UPLOAD_DIR/file_upload.filename
     with open(save_to,'wb') as f:
@@ -46,6 +46,7 @@ async def detection(file_upload:UploadFile):
     print(response)
   
     return ""
+
 Base.metadata.create_all(engine)
 
 # Custom 404 error handler
