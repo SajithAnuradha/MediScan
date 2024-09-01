@@ -144,6 +144,7 @@
 .signup-redirect {
     text-align: center;
     margin-top: 20px; /* Space between the form and the signup redirect */
+    margin-bottom: 20px;
 }
   
 .signup-text {
