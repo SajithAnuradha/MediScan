@@ -1,12 +1,9 @@
-/* Signup.css */
 
-/* Container for the signup page */
 .signup-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: #f7f8fa;
 }
 
 /* App Heading */
@@ -24,45 +21,47 @@
 
 /* Signup Card */
 .signup-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center children vertically */
     width: 100%;
     max-width: 600px;
-    padding: 40px;
+    padding: 20px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle initial shadow */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
-    margin-top: 650px;
+    margin-top: 650px; /* Adjust margin as needed */
 }
 
 .signup-card:hover {
     box-shadow: 0px 0px 30px rgba(59, 130, 246, 0.5); /* Blue glow on hover */
 }
 
-/* Signup Image */
 .signup-image {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    width: 100%; /* Adjust container width if necessary */
 }
 
 .signup-image img {
     max-width: 100%;
+    width: 150%; /* Increase width specifically for larger size */
     height: auto;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: none; /* No glow initially */
 }
 
-.signup-image img:hover {
-    box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.4); /* Blue glow effect on hover */
-}
 
 /* Signup Title */
 .signup-title {
     text-align: center;
     margin-bottom: 30px;
     font-size: 32px;
-    color: #1e3a8a; /* Darker blue */
+    color: #3b82f6; /* Darker blue */
     text-shadow: none; /* No glow initially */
 }
 
@@ -74,6 +73,7 @@
 .social-signup-buttons {
     display: flex;
     justify-content: space-around;
+    gap: 100px; 
     margin-bottom: 30px;
 }
 
@@ -81,7 +81,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 1px solid #ccc;
+    border: 1px solid #3b82f6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,6 +92,7 @@
 
 .social-button:hover {
     box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Stronger blue glow on hover */
+    border-color: #2563eb;
 }
 
 .social-icon {
@@ -106,6 +107,15 @@
     color: #333;
 }
 
+.centered-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form horizontally */
+    justify-content: center; /* Center the form vertically */
+    width: 100%; /* Full width of the parent container */
+    padding: 20px 20px; /* Add padding if needed */
+}
+
 /* Input Fields */
 .input-field {
     width: 100%;
@@ -113,7 +123,7 @@
     margin: 15px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 20px;
     box-shadow: none; /* No glow initially */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -169,6 +179,8 @@
 }
 
 .login-button:hover {
-    background-color: #2563eb;
-    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.7); /* Stronger blue glow on hover */
+    background-color: #2563eb; /* Darker blue on hover */
+    border-color: #2563eb; /* Matching border color on hover */
+    box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Enhanced blue glow on hover */
+    font-family: Arial, sans-serif;
 }

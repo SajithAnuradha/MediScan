@@ -51,10 +51,6 @@
     transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
 }
 
-.home-image:hover {
-    box-shadow: 0px 0px 20px rgba(37, 99, 235, 0.5); /* Blue glow effect on hover */
-}
-
 /* Options Container */
 .options-container {
     text-align: center;

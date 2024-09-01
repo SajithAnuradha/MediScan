@@ -65,7 +65,7 @@ const Login = () => {
 
         <div className="login-text">Or, Login with your Email</div>
 
-        <form className="login-form" onSubmit={onSubmitHandler}>
+        <form className="centered-form" onSubmit={onSubmitHandler}>
           <div className="input-group">
             <input
               type="email"

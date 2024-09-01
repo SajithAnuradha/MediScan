@@ -70,7 +70,7 @@ const Signin = () => {
 
         <div className="register-text">Or, Register with an Email</div>
 
-        <form onSubmit={handleSubmit}>
+        <form className="centered-form" onSubmit={handleSubmit}>
           <input
             type="email"
             name="email"
