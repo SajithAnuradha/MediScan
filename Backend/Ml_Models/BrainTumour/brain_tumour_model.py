@@ -8,7 +8,7 @@ import numpy as np
 
 
 def result (model,image):
-    
+  
     result=model.predict(image)
     return result
 
