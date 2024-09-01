@@ -1,0 +1,89 @@
+/* Home.css */
+
+.home-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  .home-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .user-greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .greeting-text {
+    text-align: left;
+  }
+  
+  .greeting-text h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .greeting-text p {
+    margin: 0;
+    color: gray;
+  }
+  
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .checker-section {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .checker-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .checker-card {
+    background-color: #1E90FF;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checker-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .checker-text {
+    flex: 1;
+  }
+  
+  .checker-button {
+    background-color: white;
+    color: #1E90FF;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .checker-button:hover {
+    background-color: #f0f0f0;
+  }
+  
