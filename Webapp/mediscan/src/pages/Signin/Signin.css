@@ -31,6 +31,7 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle initial shadow */
     transition: box-shadow 0.3s ease-in-out;
+    margin-top: 650px;
 }
 
 .signup-card:hover {

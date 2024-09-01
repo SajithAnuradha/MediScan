@@ -36,10 +36,10 @@ const Add = ({ title }) => {
     }
   };
 
-  const sub = async (event) => {
-    event.preventDefault();
-    navigate("/prediction");
-  };
+  // const sub = async (event) => {
+  //   event.preventDefault();
+  //   navigate("/prediction");
+  // };
 
   // Handle form submission
   const onSubmitHandler = async (event) => {
@@ -71,8 +71,9 @@ const Add = ({ title }) => {
 
       if (response.ok) {
         const result = await response.json();
+        print(result);
         setResult(result);
-        // Navigate('/') // Set the result in context
+        navigate("/prediction");
         console.log("Upload successful", result);
       } else {
         console.error("Failed to upload image");
@@ -85,7 +86,7 @@ const Add = ({ title }) => {
   return (
     <div className="add-container">
       <h1 className="page-title">{`Import Photo for ${title}`}</h1>
-      <form onSubmit={sub}>
+      <form onSubmit={onSubmitHandler}>
         {/* Image Preview Section */}
         {preview && (
           <div className="image-preview">
