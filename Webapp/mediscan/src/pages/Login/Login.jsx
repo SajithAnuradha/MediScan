@@ -6,8 +6,9 @@ import google_icon from "../../assets/images/google_img.png";
 import facebook_icon from "../../assets/images/facebook_img.png";
 import apple_icon from "../../assets/images/apple_img.png";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate=useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -29,6 +30,8 @@ const Login = () => {
           console.log(response.data);
           setToken(response.data.token);
           setUser(response.data.user);
+          navigate('/home')
+
         }
       })
       .catch((error) => {

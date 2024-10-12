@@ -10,9 +10,9 @@ const Home = () => {
   const { token } = useContext(StoreContext);
   const [name, setName] = useState("Guest");
 
-  if (token) {
-    setName("Salman");
-  }
+  // if (token) {
+  //   setName("Salman");
+  // }
 
   return (
     <div className="home-container">

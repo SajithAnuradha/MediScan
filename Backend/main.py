@@ -30,11 +30,11 @@ app.add_middleware(
     allow_headers=["*"],  # This allows all headers
 )
 # app.include_router(disease_detection.router)
-# app.include_router(auth.router)
+app.include_router(auth.router)
 
 
 
-@app.post('/skin')
+@app.post('/ct')
 async def detection(file_upload:UploadFile):
 
     data=await file_upload.read()
@@ -42,8 +42,8 @@ async def detection(file_upload:UploadFile):
     with open(save_to,'wb') as f:
         f.write(data)
     print(save_to)
-    pre=preprocess_skin_image(save_to)
-    response=result_skin(best_model_ct,pre)
+    pre=preprocess_ct_image(save_to)
+    response=result_ct(best_model_ct,pre)
     print(response)
     return(response)
 
@@ -63,7 +63,7 @@ async def detection(file_upload:UploadFile):
     else :
         return "You are NOT diagnosed with brain tumour"
   
-@app.post('/ct')
+@app.post('/skin')
 async def detection(file_upload:UploadFile):
 
     data=await file_upload.read()
@@ -71,8 +71,8 @@ async def detection(file_upload:UploadFile):
     with open(save_to,'wb') as f:
         f.write(data)
     print(save_to)
-    pre=preprocess_ct_image(save_to)
-    response=result_ct(best_model_skin,pre)
+    pre=preprocess_skin_image(save_to)
+    response=result_skin(best_model_skin,pre)
     print(response)
     return(response)
 
