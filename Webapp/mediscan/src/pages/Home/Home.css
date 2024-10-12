@@ -1,14 +1,18 @@
 /* Home.css */
 
-.home-container {
-    max-width: 600px;
+/* .home-container {
+    
     margin: 0 auto;
     padding: 20px;
     font-family: 'Arial', sans-serif;
     text-align: center;
   }
+  .content-box{
+    display: flex;
+    flex-direction: column;
+  } */
   
-  .home-title {
+  /* .home-title {
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: bold;
@@ -81,7 +85,7 @@
     padding: 5px 15px;
     cursor: pointer;
     font-weight: bold;
-  }
+  } */
   
   .checker-button:hover {
     background-color: #f0f0f0;

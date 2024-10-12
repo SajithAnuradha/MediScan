@@ -48,56 +48,44 @@ const Login = () => {
         </div>
 
         {/* Login Title */}
-        <h2 className="login-title">Login</h2>
 
-        {/* Social Login Buttons */}
-        <div className="social-login-buttons">
-          <button className="social-button">
-            <img src={google_icon} alt="Google" className="social-icon" />
-          </button>
-          <button className="social-button">
-            <img src={facebook_icon} alt="Facebook" className="social-icon" />
-          </button>
-          <button className="social-button">
-            <img src={apple_icon} alt="Apple" className="social-icon" />
-          </button>
-        </div>
+        <div className="login-content">
+          <h2 className="login-title">Login</h2>
 
-        <div className="login-text">Or, Login with your Email</div>
+          <form className="login-form" onSubmit={onSubmitHandler}>
+            <div className="input-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email ID"
+                className="input-field"
+                value={data.email}
+                onChange={onChangeHandler}
+                required
+              />
+            </div>
+            <div className="input-group">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="input-field"
+                value={data.password}
+                onChange={onChangeHandler}
+                required
+              />
+            </div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+          </form>
 
-        <form className="login-form" onSubmit={onSubmitHandler}>
-          <div className="input-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email ID"
-              className="input-field"
-              value={data.email}
-              onChange={onChangeHandler}
-              required
-            />
+          <div className="signup-redirect">
+            <div className="signup-text">Don't have an account?</div>
+            <Link to="/signin" className="signup-button">
+              Sign Up
+            </Link>
           </div>
-          <div className="input-group">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="input-field"
-              value={data.password}
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-        </form>
-
-        <div className="signup-redirect">
-          <div className="signup-text">Don't have an account?</div>
-          <Link to="/signin" className="signup-button">
-            Sign Up
-          </Link>
         </div>
       </div>
     </div>

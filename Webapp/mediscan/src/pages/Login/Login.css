@@ -2,8 +2,8 @@
 .login-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    
+    min-height: 100vh;
 
 }
   
@@ -21,35 +21,33 @@
   
 .login-card {
     width: 100%;
-    max-width: 600px; /* Card width */
+    /* Card width */
     padding: 40px; /* Padding inside the card */
     background: #fff; /* White background */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle initial shadow */
-}
-  
-.login-card:hover {
-    box-shadow: 0px 0px 40px rgba(59, 130, 246, 0.6); /* Blue glow effect on hover */
-}
-  
-.login-image {
+   /* Subtle initial shadow */
     display: flex;
-    justify-content: center;
-    margin-bottom: 30px; /* Space below the image */
+    flex-direction: row;
 }
   
-.login-image img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover; /* Cover the area without stretching */
-    border-radius: 10px; /* Rounded corners for image */
-    box-shadow: none; /* No glow initially */
-}
 
-.login-image img:hover {
-    box-shadow: 0px 0px 25px rgba(59, 130, 246, 0.8); /* Enhanced blue glow on hover */
-}
   
+
+
+/* .login-image img {
+   width: 100%;
+  
+} */
+
+.login-image img {
+width: 100%;
+height: 500px;
+}
+.login-content{
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+}
 .login-title {
     text-align: center;
     margin-bottom: 30px; /* Space below the title */
@@ -156,9 +154,7 @@
     box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Enhanced blue glow on hover */
 }
 
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-  }
+   
   
   h1 {
     margin-bottom: 20px;

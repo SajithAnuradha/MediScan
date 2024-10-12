@@ -1,60 +1,60 @@
-/* Signup.css */
 
-/* Container for the signup page */
 .signup-container {
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background: #f7f8fa;
+    
+   
 }
 
 /* App Heading */
 .app-heading {
     font-size: 48px;
     color: #3b82f6;
-    margin: 40px 0;
+    
     text-shadow: none; /* No glow initially */
     text-align: center;
 }
 
-.app-heading:hover {
-    text-shadow: 0px 0px 15px rgba(59, 130, 246, 0.75); /* Blue glow effect on hover */
-}
+
 
 /* Signup Card */
 .signup-card {
-    width: 100%;
-    max-width: 600px;
-    padding: 40px;
-    background: #fff;
+   width: 100%;
+    padding: 5px;
+  
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle initial shadow */
-    transition: box-shadow 0.3s ease-in-out;
-    margin-top: 650px;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
 
-.signup-card:hover {
-    box-shadow: 0px 0px 30px rgba(59, 130, 246, 0.5); /* Blue glow on hover */
-}
+
 
 /* Signup Image */
 .signup-image {
     display: flex;
-    justify-content: center;
     margin-bottom: 30px;
+    height: 100%;
 }
 
 .signup-image img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: none; /* No glow initially */
+    margin-left: 0px;
+    width: 100%;
+    height: 60%;
+   
 }
+.signup-details{
+    margin-right: 200px;
+    
+    display: block;
+    justify-content: space-between;
+    gap: 100px;
 
-.signup-image img:hover {
-    box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.4); /* Blue glow effect on hover */
+}
+.form {
+    width: 100%;
 }
 
 /* Signup Title */
@@ -66,9 +66,7 @@
     text-shadow: none; /* No glow initially */
 }
 
-.signup-title:hover {
-    text-shadow: 0px 0px 8px rgba(59, 130, 246, 0.6); /* Blue glow on hover */
-}
+
 
 /* Social Signup Buttons */
 .social-signup-buttons {
@@ -109,8 +107,8 @@
 /* Input Fields */
 .input-field {
     width: 100%;
-    padding: 15px;
-    margin: 15px 0;
+    padding: 5px;
+   
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -127,8 +125,8 @@
 /* Signup Button */
 .signup-button {
     width: 100%;
-    padding: 15px;
-    margin: 30px 0;
+   
+    
     border-radius: 5px;
     border: none;
     background-color: #3b82f6;
@@ -147,7 +145,12 @@
 /* Login Redirect */
 .login-redirect {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
+}
+.details-sign{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .login-text {
@@ -157,7 +160,7 @@
 }
 
 .login-button {
-    padding: 10px 20px;
+    
     border-radius: 5px;
     border: 1px solid #3b82f6;
     background-color: #3b82f6;

@@ -1,5 +1,4 @@
 import React from "react";
-
 import medicalImage from "../../assets/images/Front_img.png";
 import "./Start.css";
 import { Link } from "react-router-dom";
@@ -10,13 +9,13 @@ const Start = () => {
       <h1 className="app-title">MediScan</h1>
 
       <div className="content-box">
-        <img
-          src={medicalImage}
-          alt="Medical Illustration"
-          className="home-image"
-        />
-
         <div className="options-container">
+          <h1>Virtual Health Care for You</h1>
+
+          <p>
+            Trafalgar provides progressive, and affordable healthcare,
+            accessible on mobile and online for everyone
+          </p>
           <p>If you already registered you can continue here</p>
           <Link to="/login" className="glow-button">
             Continue as a User
@@ -26,6 +25,14 @@ const Start = () => {
           <Link to="/home" className="glow-button guest-button">
             Continue as a Guest
           </Link>
+        </div>
+
+        <div>
+          <img
+            src={medicalImage}
+            alt="Medical Illustration"
+            className="home-image"
+          />
         </div>
       </div>
     </div>
