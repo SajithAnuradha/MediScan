@@ -20,7 +20,12 @@
 }
   
 .login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center children vertically */
     width: 100%;
+<<<<<<< HEAD
     /* Card width */
     padding: 40px; /* Padding inside the card */
     background: #fff; /* White background */
@@ -31,6 +36,35 @@
 }
   
 
+=======
+    max-width: 600px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    margin-top: 50px; /* Adjust margin as needed */
+}
+  
+.login-card:hover {
+    box-shadow: 0px 0px 40px rgba(59, 130, 246, 0.6); /* Blue glow effect on hover */
+}
+.login-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%; /* Adjust container width if necessary */
+}
+
+.login-image img {
+    max-width: 100%;
+    width: 150%; /* Increase width specifically for larger size */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: none; /* No glow initially */
+}
+>>>>>>> a10c9dbf68cb09a7eb1a68e0be8033344ed820a2
   
 
 
@@ -63,6 +97,7 @@ height: 500px;
 .social-login-buttons {
     display: flex;
     justify-content: space-around;
+    gap: 100px; 
     margin-bottom: 30px; /* Space below the buttons */
 }
   
@@ -92,6 +127,15 @@ height: 500px;
     margin-bottom: 30px; /* Space below the text */
     font-size: 18px; /* Font size for text */
     color: #333; /* Text color */
+}
+
+.centered-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form horizontally */
+    justify-content: center; /* Center the form vertically */
+    width: 100%; /* Full width of the parent container */
+    padding: 20px 20px; /* Add padding if needed */
 }
   
 .input-field {
@@ -129,12 +173,13 @@ height: 500px;
 .signup-redirect {
     text-align: center;
     margin-top: 20px; /* Space between the form and the signup redirect */
+    margin-bottom: 20px;
 }
   
 .signup-text {
     font-size: 16px; /* Font size for signup prompt */
     color: #333; /* Darker text color for readability */
-    margin-bottom: 10px; /* Space below the text */
+    margin-bottom: 30px; /* Space below the text */
 }
   
 .signup-button {
@@ -152,9 +197,14 @@ height: 500px;
     background-color: #2563eb; /* Darker blue on hover */
     border-color: #2563eb; /* Matching border color on hover */
     box-shadow: 0px 0px 20px rgba(59, 130, 246, 0.6); /* Enhanced blue glow on hover */
+<<<<<<< HEAD
 }
 
    
+=======
+    font-family: Arial, sans-serif;
+  }
+>>>>>>> a10c9dbf68cb09a7eb1a68e0be8033344ed820a2
   
   h1 {
     margin-bottom: 20px;
@@ -165,7 +215,6 @@ height: 500px;
   img {
     width: 100px;
     height: auto;
-    margin-bottom: 20px;
   }
   
   .login-form {

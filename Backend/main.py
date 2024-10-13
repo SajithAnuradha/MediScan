@@ -10,13 +10,17 @@ from tensorflow.keras.utils import img_to_array
 import io
 from PIL import Image
 from pathlib import Path
-from Ml_Models.BrainTumour.brain_tumour_model import preprocess_image,result
+from ml_models.BrainTumour.brain_tumour_model import preprocess_image,result
+from ml_models.Skin.skin_predictor import preprocess_skin_image, result_skin
+from ml_models.CT.ct_predictor import preprocess_ct_image, result_ct
 
 UPLOAD_DIR=Path()/'uploads'
 
 app = FastAPI()
 
-best_model = load_model(filepath='cnn-parameters-improvement-02-0.87.keras')
+best_model_mri = load_model(filepath='cnn-parameters-improvement-02-0.87.keras')
+best_model_skin = load_model(filepath='skin-cnn-parameters-improvement-46.keras')
+best_model_ct = load_model(filepath='best_model_resnet.h5.keras')
 
 app.add_middleware(
     CORSMiddleware,
@@ -30,25 +34,48 @@ app.add_middleware(
 
 
 
+@app.post('/skin')
+async def detection(file_upload:UploadFile):
 
+    data=await file_upload.read()
+    save_to=UPLOAD_DIR/file_upload.filename
+    with open(save_to,'wb') as f:
+        f.write(data)
+    print(save_to)
+    pre=preprocess_skin_image(save_to)
+    response=result_skin(best_model_ct,pre)
+    print(response)
+    return(response)
 
 
 @app.post('/mri')
 async def detection(file_upload:UploadFile):
-    
+
     data=await file_upload.read()
     save_to=UPLOAD_DIR/file_upload.filename
     with open(save_to,'wb') as f:
         f.write(data)
     print(save_to)
     pre=preprocess_image(save_to)
-    response=result(best_model,pre)
-    if (response[0] >0.5):
-        return "You have a BRAIN TUMOUR"
+    response=result(best_model_mri,pre)
+    if (response[0] < 0.5):
+        return "You can be diagnosed with BRAIN TUMOUR"
     else :
-        return "You have not a BRAIN TUMOUR"
+        return "You are NOT diagnosed with brain tumour"
   
-    
+@app.post('/ct')
+async def detection(file_upload:UploadFile):
+
+    data=await file_upload.read()
+    save_to=UPLOAD_DIR/file_upload.filename
+    with open(save_to,'wb') as f:
+        f.write(data)
+    print(save_to)
+    pre=preprocess_ct_image(save_to)
+    response=result_ct(best_model_skin,pre)
+    print(response)
+    return(response)
+
 Base.metadata.create_all(engine)
 
 # Custom 404 error handler

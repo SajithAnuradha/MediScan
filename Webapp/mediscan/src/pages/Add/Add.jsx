@@ -64,6 +64,8 @@ const Add = ({ title }) => {
         endpoint = `${url}/skin`;
       } else if (title === "MRI SCAN") {
         endpoint = `${url}/mri`;
+      } else if (title === "CT SCAN") {
+        endpoint = `${url}/ct`;
       }
 
       const response = await fetch(endpoint, {

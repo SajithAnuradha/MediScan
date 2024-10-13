@@ -80,11 +80,25 @@ const Login = () => {
             </button>
           </form>
 
+<<<<<<< HEAD
           <div className="signup-redirect">
             <div className="signup-text">Don't have an account?</div>
             <Link to="/signin" className="signup-button">
               Sign Up
             </Link>
+=======
+        <form className="centered-form" onSubmit={onSubmitHandler}>
+          <div className="input-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email ID"
+              className="input-field"
+              value={data.email}
+              onChange={onChangeHandler}
+              required
+            />
+>>>>>>> a10c9dbf68cb09a7eb1a68e0be8033344ed820a2
           </div>
         </div>
       </div>
