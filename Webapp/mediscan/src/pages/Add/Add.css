@@ -1,12 +1,18 @@
-/* Add.css */
+.add h1{
+ text-align: center;
+  font-size: 24px;
+  color: #55c7f4;
+
+
+}
 
 .add-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  height: 90vh;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  
 }
 
 .page-title {
@@ -21,6 +27,7 @@ form {
   flex-direction: column;
   align-items: center;
   width: 90%;
+  height: auto;
   max-width: 400px;
   background-color: #fff;
   padding: 20px;
@@ -64,6 +71,9 @@ input[type="checkbox"] {
 .add-container {
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .page-title {

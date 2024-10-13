@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const { token } = useContext(StoreContext);
+  const [page, setPage] = useState("home");
   const [name, setName] = useState("Guest");
 
   if (token) {
@@ -16,7 +17,11 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title">Home</h1>
+      <h1 className="home-title">
+        <Link to="/home">Home</Link>
+        <Link to="/setting">setting</Link>
+        <Link to="/history">history</Link>
+      </h1>
 
       {/* User Greeting Section */}
       <div className="user-greeting">

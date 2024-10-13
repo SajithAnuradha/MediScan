@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import "./Add.css"; // Import the CSS file
 import { Navigate, useNavigate } from "react-router-dom";
+import Prediction from "../Prediction/Prediction";
+import Confident from "../Confiedent/Confident";
 
 const Add = ({ title }) => {
   const navigate = useNavigate();
@@ -84,37 +86,50 @@ const Add = ({ title }) => {
   };
 
   return (
-    <div className="add-container">
+    <div className="add">
       <h1 className="page-title">{`Import Photo for ${title}`}</h1>
-      <form onSubmit={onSubmitHandler}>
-        {/* Image Preview Section */}
-        {preview && (
-          <div className="image-preview">
-            <img src={preview} alt="Selected" className="preview-img" />
-          </div>
-        )}
+      <div className="add-container">
+        <div>
+          <h1>{`Upload Photo for ${title}`}</h1>
+          <form onSubmit={onSubmitHandler}>
+            {/* Image Preview Section */}
+            {preview && (
+              <div className="image-preview">
+                <img src={preview} alt="Selected" className="preview-img" />
+              </div>
+            )}
 
-        <label>
-          <input
-            type="checkbox"
-            name="addhistory"
-            checked={data.addhistory}
-            onChange={onChangeHandler}
-          />
-          Add to Your History
-        </label>
+            <label>
+              <input
+                type="checkbox"
+                name="addhistory"
+                checked={data.addhistory}
+                onChange={onChangeHandler}
+              />
+              Add to Your History
+            </label>
 
-        <input
-          type="file"
-          name="image"
-          onChange={onImageChange}
-          accept=".jpg, .jpeg, .png"
-          required
-        />
-        <button className="generate-report-button" type="submit">
-          Generate Report
-        </button>
-      </form>
+            <input
+              type="file"
+              name="image"
+              onChange={onImageChange}
+              accept=".jpg, .jpeg, .png"
+              required
+            />
+            <button className="generate-report-button" type="submit">
+              Generate Report
+            </button>
+          </form>
+        </div>
+
+        <div className="model-prediction">
+          <Prediction />
+        </div>
+
+        <div className="model-confident">
+          <Confident confidence={65} />
+        </div>
+      </div>
     </div>
   );
 };
