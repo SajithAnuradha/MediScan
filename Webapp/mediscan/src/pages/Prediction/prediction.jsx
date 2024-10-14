@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 import { useContext } from "react";
 
-const Prediction = () => {
+const Prediction = ({ result }) => {
   const { token, result } = useContext(StoreContext);
 
   return (

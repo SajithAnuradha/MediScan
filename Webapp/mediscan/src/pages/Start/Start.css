@@ -47,74 +47,9 @@
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
-<<<<<<< HEAD
   }
   
   .guest-button {
     background-color: #007bff;
   }
   
-=======
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
-}
-
-.content-box:hover {
-    box-shadow: 0px 0px 40px rgba(37, 99, 235, 0.5); /* Stronger blue glow on hover */
-}
-
-/* Image */
-.home-image {
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: none; /* No glow initially */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
-}
-
-/* Options Container */
-.options-container {
-    text-align: center;
-    width: 100%;
-}
-
-/* Paragraph Text */
-.options-container p {
-    font-size: 18px;
-    color: #2563eb;
-    margin: 15px 0;
-}
-
-/* Glowing Button */
-.glow-button {
-    background-color: #2563eb;
-    color: #ffffff;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 25px;
-    font-size: 18px;
-    margin: 15px 0;
-    cursor: pointer;
-    box-shadow: none; /* No glow initially */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
-}
-
-.glow-button:hover {
-    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Strong blue glow on hover */
-}
-
-/* Guest Button */
-.guest-button {
-    background-color: transparent;
-    color: #2563eb;
-    border: 2px solid #2563eb;
-    box-shadow: none; /* No glow initially */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-}
-
-.guest-button:hover {
-    background-color: #2563eb;
-    color: #ffffff;
-    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Initial blue glow on hover */
-}
->>>>>>> a10c9dbf68cb09a7eb1a68e0be8033344ed820a2
