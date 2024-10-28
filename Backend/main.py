@@ -30,7 +30,7 @@ app.add_middleware(
     allow_headers=["*"],  # This allows all headers
 )
 # app.include_router(disease_detection.router)
-# app.include_router(auth.router)
+app.include_router(auth.router)
 
 
 

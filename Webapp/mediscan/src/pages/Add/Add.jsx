@@ -122,7 +122,7 @@ const Add = ({ title }) => {
           </form>
         </div>
 
-       
+
       </div>
     </div>
   );
