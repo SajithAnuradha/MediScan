@@ -99,6 +99,17 @@ class TestFileOpen(TestCase):
         finally:
             fid.close()
 
+    # Observed on cibuildwheel v2.19.1
+    # https://github.com/pypa/cibuildwheel/issues/1882
+    @pytest.mark.skipif(
+        os.getenv("CIBUILDWHEEL") == "1" and sys.platform == "linux",
+        reason="Linux docker cibuildwheel environment permissions issue",
+    )
+    def test_append_permissions(self):
+        """ Mode 'a' fails when file is read-only """
+        fname = self.mktemp()
+        with File(fname, 'a') as fid:
+            fid.create_group('foo')
         os.chmod(fname, stat.S_IREAD)  # Make file read-only
         try:
             with pytest.raises(PermissionError):
@@ -457,6 +468,7 @@ class TestDrivers(TestCase):
         # Driver must be 'fileobj' for file-like object if specified
         with self.assertRaises(ValueError):
             File(tf, 'w', driver='core')
+        tf.close()
 
     # TODO: family driver tests
 
@@ -997,6 +1009,43 @@ f = h5py.File({str(filename)!r}, mode={mode!r}, locking={locking})
         with h5py.File(fname, mode="r", locking=False) as f:
             # Opening in write mode with locking is expected to work
             assert open_in_subprocess(fname, mode="w", locking=True)
+
+
+@pytest.mark.skipif(
+    h5py.version.hdf5_version_tuple < (1, 14, 4),
+    reason="Requires HDF5 >= 1.14.4",
+)
+@pytest.mark.skipif(
+    "HDF5_USE_FILE_LOCKING" in os.environ,
+    reason="HDF5_USE_FILE_LOCKING env. var. is set",
+)
+@pytest.mark.parametrize(
+    'locking_arg,file_locking_props',
+    [
+        (False, (0, 0)),
+        (True, (1, 0)),
+        ('best-effort', (1, 1)),
+    ]
+)
+def test_file_locking_external_link(tmp_path, locking_arg, file_locking_props):
+    """Test that same file locking is used for external link"""
+    fname_main = tmp_path / "test_main.h5"
+    fname_elink = tmp_path / "test_linked.h5"
+
+    # Create test files
+    with h5py.File(fname_elink, "w") as f:
+        f["data"] = 1
+    with h5py.File(fname_main, "w") as f:
+        f["link"] = h5py.ExternalLink(fname_elink, "/data")
+
+    with h5py.File(fname_main, "r", locking=locking_arg) as f:
+        locking_info = f.id.get_access_plist().get_file_locking()
+        assert locking_info == file_locking_props
+
+        # Test that external link file is also opened without file locking
+        elink_dataset = f["link"]
+        elink_locking_info = elink_dataset.file.id.get_access_plist().get_file_locking()
+        assert elink_locking_info == file_locking_props
 
 
 def test_close_gc(writable_file):
