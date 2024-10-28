@@ -55,7 +55,3 @@ def current_user_data(db: Session=Depends(get_db), user_dict = Depends(auth_midd
         raise HTTPException(404, 'User not found!')
     
     return user
-  
-
-    
-    

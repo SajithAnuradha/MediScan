@@ -129,7 +129,7 @@ const Add = ({ title }) => {
         </div>
 
         <div className="model-confident">
-          <Confident confidence={65} />
+          <Confident confidence={0} />
         </div>
       </div>
     </div>
