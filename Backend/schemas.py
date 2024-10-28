@@ -16,3 +16,12 @@ class UserLogin(BaseModel):
 class Image(BaseModel):
     arrL: list
     arr: bytes 
+
+class History(BaseModel):
+    user_id: str
+    diagnosis: str
+    date: str
+    #image: 
+
+class UserDetails(BaseModel):
+    user_id: str

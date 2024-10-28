@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
-from routers import disease_detection, auth
+from routers import disease_detection, auth, history
 from models.base import Base
 from database import engine
 from fastapi.middleware.cors import CORSMiddleware
@@ -31,6 +31,7 @@ app.add_middleware(
 )
 # app.include_router(disease_detection.router)
 app.include_router(auth.router)
+app.include_router(history.router)
 
 
 
@@ -59,9 +60,9 @@ async def detection(file_upload:UploadFile):
     pre=preprocess_image(save_to)
     response=result(best_model_mri,pre)
     if (response[0] < 0.5):
-        return "You can be diagnosed with BRAIN TUMOUR"
+        return "True"
     else :
-        return "You are NOT diagnosed with brain tumour"
+        return "False"
   
 @app.post('/skin')
 async def detection(file_upload:UploadFile):

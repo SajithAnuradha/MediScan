@@ -15,7 +15,7 @@ def result_ct(model,image):
 
     output = 'Result is ' + class_names[np.argmax(score)] 
 
-    return output
+    return class_names[np.argmax(score)] 
 
 
 
