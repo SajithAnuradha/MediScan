@@ -16,26 +16,28 @@ const Home = () => {
   }
 
   return (
+    <div>
+    <div className="app-container">
+    <header className="header">
+      <h1 className="app-logo">MediScan</h1>
+    </header>
+    </div>
     <div className="home-container">
       <h1 className="home-title">
         <Link to="/home">Home</Link>
-        <Link to="/setting">setting</Link>
-        <Link to="/history">history</Link>
+        
+        <Link to="/history">History</Link>
       </h1>
 
       {/* User Greeting Section */}
       <div className="user-greeting">
         <div className="greeting-text">
           <h2>{`Hi ${name}`}</h2>
-
           <p>How are you feeling today?</p>
         </div>
-        <img
-          src={user} // Replace with actual image URL
-          alt="User"
-          className="user-avatar"
-        />
+        <img src={user} alt="User" className="user-avatar" />
       </div>
+
 
       {/* Symptom Checker */}
       <section className="checker-section">
@@ -78,6 +80,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
+    </div>
     </div>
   );
 };
