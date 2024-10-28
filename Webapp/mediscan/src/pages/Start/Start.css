@@ -1,120 +1,182 @@
-.home-container {
-    display: flex;
-    flex-direction: column;
-    
-    
-  }
-  .app-title{
-    font-size: 20px;
-    margin-left: 260px;
-    font-weight: bold;
-    color: #007bff;
-  }
-
-
-  .content-box {
-    display: flex;
-     width: 100%; 
-    
-     
-    
-  }
-  
-  .home-image {
-
-    width: 400px;
-    height: 500px;
-    margin-left:40px;
-    margin-top: 40px;
-  }
-  
-  .options-container {
-    /* Adjust the width of the content */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-left: 200px;
-   
-
-  }
-  
-  .glow-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-<<<<<<< HEAD
-  }
-  
-  .guest-button {
-    background-color: #007bff;
-  }
-  
-=======
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.content-box:hover {
-    box-shadow: 0px 0px 40px rgba(37, 99, 235, 0.5); /* Stronger blue glow on hover */
+body {
+  font-family: Arial, sans-serif;
 }
 
-/* Image */
-.home-image {
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: none; /* No glow initially */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+.app-container {
+  width: 100%;
 }
 
-/* Options Container */
-.options-container {
-    text-align: center;
-    width: 100%;
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #007bff;
+  color: white;
 }
 
-/* Paragraph Text */
-.options-container p {
-    font-size: 18px;
-    color: #2563eb;
-    margin: 15px 0;
+.app-logo {
+  font-size: 24px;
+  font-weight: bold;
+  align-self: center;
 }
 
-/* Glowing Button */
-.glow-button {
-    background-color: #2563eb;
-    color: #ffffff;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 25px;
-    font-size: 18px;
-    margin: 15px 0;
-    cursor: pointer;
-    box-shadow: none; /* No glow initially */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-.glow-button:hover {
-    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Strong blue glow on hover */
+.nav-links a {
+  color: white;
+  text-decoration: none;
 }
 
-/* Guest Button */
+.appointment-button {
+  background-color: #ff5733;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  background-color: #f4f8fb;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.hero-text h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  color: #666;
+}
+
+.action-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
 .guest-button {
-    background-color: transparent;
-    color: #2563eb;
-    border: 2px solid #2563eb;
-    box-shadow: none; /* No glow initially */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  background-color: #28a745;
 }
 
-.guest-button:hover {
-    background-color: #2563eb;
-    color: #ffffff;
-    box-shadow: 0px 0px 25px rgba(37, 99, 235, 0.7); /* Initial blue glow on hover */
+.hero-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
->>>>>>> a10c9dbf68cb09a7eb1a68e0be8033344ed820a2
+
+/* Practices Section */
+.practices-section {
+  padding: 40px;
+  background-color: white;
+  text-align: center;
+}
+
+.practices-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.practices-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.practices-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #f4f8fb;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.all-practices-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.why-choose-us {
+  padding: 40px;
+  background-color: #e8f5ff;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.why-choose-us p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  max-width: 1200px; 
+  max-height: auto; 
+  width: 100%; 
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
