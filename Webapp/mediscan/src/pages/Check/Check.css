@@ -1,0 +1,28 @@
+.check-container {
+    display: flex;                     /* Use flexbox for layout */
+    justify-content: space-between;    /* Space components evenly */
+    align-items: center;               /* Align items vertically centered */
+    padding: 20px;                     /* Add some padding for spacing */
+  }
+  
+  .Add, .model-prediction, .model-confident {
+    flex: 1;                           /* Allow each component to grow equally */
+    margin: 0 10px;                   /* Add horizontal margin for spacing */
+  }
+  
+  .model-confident {
+    margin-top: -150px;                /* Move the confident component up */
+    /* Alternatively, use transform */
+    /* transform: translateY(-10px);  /* Uncomment this line to use transform instead */
+  }
+
+  .app-container {
+    width: 100%;             /* Reduced padding for a smaller title bar */         /* Optional: Add background color if needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow */
+}
+
+.app-logo {
+    color: white;
+    font-size: 20px;                 /* Reduce font size if needed */
+    margin: 0;                       /* Ensure no extra margin around text */
+}

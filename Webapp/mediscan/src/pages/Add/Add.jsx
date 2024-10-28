@@ -2,8 +2,6 @@ import React, { useState, useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import "./Add.css"; // Import the CSS file
 import { Navigate, useNavigate } from "react-router-dom";
-import Prediction from "../Prediction/Prediction";
-import Confident from "../Confiedent/Confident";
 
 const Add = ({ title }) => {
   const navigate = useNavigate();
@@ -124,13 +122,7 @@ const Add = ({ title }) => {
           </form>
         </div>
 
-        <div className="model-prediction">
-          <Prediction />
-        </div>
-
-        <div className="model-confident">
-          <Confident confidence={65} />
-        </div>
+       
       </div>
     </div>
   );
