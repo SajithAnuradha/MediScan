@@ -8,6 +8,7 @@ import Prediction from "../pages/Prediction/Prediction";
 import Add from "../pages/Add/Add";
 import Start from "../pages/Start/Start";
 import Home from "../pages/Home/Home";
+import Check from "../pages/Check/Check";
 
 const router = createBrowserRouter([
   {
@@ -42,15 +43,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/ct",
-    element: <Add title={"CT SCAN"} />,
+    element: <Check title={"CT SCAN"} />,
   },
   {
     path: "/mri",
-    element: <Add title={"MRI SCAN"} />,
+    element: <Check title={"MRI SCAN"} />,
   },
   {
     path: "/skin",
-    element: <Add title={"SKIN SCAN"} />,
+    element: <Check title={"SKIN SCAN"} />,
   },
 ]);
 

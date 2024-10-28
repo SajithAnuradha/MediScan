@@ -1,13 +1,81 @@
 .confident-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px); /* Full viewport height minus top margin */
+  margin-top: 150px; /* Added top margin */
+  background: linear-gradient(135deg, #e0f7fa, #007bff); /* Soft gradient background */
+  padding: 40px; /* Increased padding */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  border-radius: 20px; /* Increased border radius for a softer look */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animation on hover */
+  animation: fadeIn 1s ease-out; /* Fade-in animation on load */
+}
+
+.confident-container:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start transparent */
+    transform: translateY(20px); /* Start slightly lower */
   }
-  
-  .progress-circle {
-    width: 300px;
-    height: 150px;
+  to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
   }
+}
+
+.progress-circle {
+  width: 300px; /* Width of the circle */
+  height: 300px; /* Equal height for a perfect circle */
+  border-radius: 50%; /* Circular shape */
+  background: conic-gradient(#003366 0%, #003366 var(--percentage), #ddd var(--percentage), #ddd 100%); /* Dark blue color for progress */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  display: flex; /* Flexbox for centering content inside */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  color: white; /* Text color */
+  font-size: 28px; /* Increased font size for inner text */
+  font-weight: bold; /* Bold text */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animation on hover */
+  animation: pulse 1.5s infinite; /* Pulsating animation */
+  margin-top: 20px;
+}
+.paragraph {
+  font-size: 18px; /* Clear, readable text size */
+  line-height: 1.6; /* Comfortable line spacing */
+  color: #000; /* Bold black color */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center-aligned for consistency with other centered elements */
+  padding: 20px; /* Space around the text */
+  background-color: rgba(224, 247, 250, 0.2); /* Soft, translucent background */
+  border-radius: 15px; /* Rounded corners to match the container */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Soft shadow for a floating effect */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation on hover */
+  margin-top: 20px; /* Space above for separation */
   
+}
+
+.paragraph:hover {
+  transform: scale(1.03); /* Slight enlargement on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+.progress-circle:hover {
+  transform: rotate(5deg); /* Slight rotation on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Original size */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger */
+  }
+}
