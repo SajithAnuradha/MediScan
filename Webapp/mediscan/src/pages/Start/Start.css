@@ -84,13 +84,14 @@ body {
   margin-right: 10px;
 }
 
-.action-button:hover {
-  background-color: #0056b3;
+.action-button :hover {
+  background-color: #174e01;
 }
 
 .guest-button {
   background-color: #28a745;
 }
+
 
 .hero-image img {
   width: 400px;

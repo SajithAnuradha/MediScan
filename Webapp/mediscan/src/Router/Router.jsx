@@ -37,10 +37,7 @@ const router = createBrowserRouter([
     path: "/history",
     element: <History />,
   },
-  {
-    path: "/prediction",
-    element: <Prediction />,
-  },
+
   {
     path: "/ct",
     element: <Check title={"CT SCAN"} />,

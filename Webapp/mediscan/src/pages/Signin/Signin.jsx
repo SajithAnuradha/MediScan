@@ -6,10 +6,11 @@ import doctorsImage from "../../assets/images/2.1.jpg";
 import google_icon from "../../assets/images/google_img.png";
 import facebook_icon from "../../assets/images/facebook_img.png";
 import apple_icon from "../../assets/images/apple_img.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const { url, setToken, setUser } = useContext(StoreContext);
+  const Navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
     password: "",
@@ -37,9 +38,9 @@ const Signin = () => {
       const response = await axios.post(`${url}/auth/signup`, data);
 
       if (response.status === 201) {
-        console.log(response.data);
         setToken(response.data.token);
-        setUser(response.data.user);
+        setUser(response.data);
+        Navigate("/home");
       } else {
         console.log("Error: ", response.status);
       }

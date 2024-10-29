@@ -6,13 +6,14 @@ import google_icon from "../../assets/images/google_img.png";
 import facebook_icon from "../../assets/images/facebook_img.png";
 import apple_icon from "../../assets/images/apple_img.png";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
 
+  const Navigate = useNavigate();
   const { url, setToken, setUser } = useContext(StoreContext);
 
   const onChangeHandler = (event) => {
@@ -26,9 +27,11 @@ const Login = () => {
       .post(`${url}/auth/login`, data)
       .then((response) => {
         if (response.status === 200) {
-          console.log(response.data);
+          console.log(response.data.user.name);
           setToken(response.data.token);
           setUser(response.data.user);
+
+          Navigate("/home");
         }
       })
       .catch((error) => {

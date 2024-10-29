@@ -21,3 +21,12 @@ class User(Base):
     age = Column(Integer)
     gender=Column(VARCHAR(50))
     phonenumber=Column(VARCHAR(100))
+
+
+class History(Base):
+    __tablename__ = 'history'
+    history_id = Column(TEXT, primary_key=True)
+    user_id = Column(TEXT)
+    diagnosis = Column(VARCHAR(100))
+    date = Column(TEXT, index=True)
+    path = Column(TEXT, nullable=False)

@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import "./Add.css"; // Import the CSS file
 import { Navigate, useNavigate } from "react-router-dom";
-
+import axios from "axios";
 const Add = ({ title }) => {
-  const navigate = useNavigate();
-  const { url, setResult } = useContext(StoreContext); // Get the base URL from context
+  const { url, setResult, user, result } = useContext(StoreContext);
+  // Get the base URL from context
   const [image, setImage] = useState(null); // Set initial state to null
   const [preview, setPreview] = useState(null); // State for the image preview
   const [data, setData] = useState({
@@ -36,11 +36,6 @@ const Add = ({ title }) => {
     }
   };
 
-  // const sub = async (event) => {
-  //   event.preventDefault();
-  //   navigate("/prediction");
-  // };
-
   // Handle form submission
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -52,7 +47,9 @@ const Add = ({ title }) => {
 
     const formData = new FormData();
     formData.append("file_upload", image);
-    formData.append("addhistory", data.addhistory);
+    // formData.append("addhistory", data.addhistory);
+    // console.log(user.user_id);
+    // formData.append("userID", user.user_id);
 
     // Declare the endpoint variable here
     let endpoint = `${url}/ct`; // Default to CT scan endpoint
@@ -70,19 +67,37 @@ const Add = ({ title }) => {
         method: "POST",
         body: formData,
       });
+      console.log(response.data);
+      const result = await response.json();
 
-      if (response.ok) {
-        const result = await response.json();
-        print(result);
+      if (title != "MRI SCAN") {
         setResult(result);
-        navigate("/prediction");
-        console.log("Upload successful", result);
+      } else if (title === "MRI SCAN") {
+        if (result.diagnosis == "True") {
+          setResult(`You are diagnosed with Brain Tumor`);
+        } else {
+          setResult(`You are NOT diagnosed with  Brain Tumor`);
+        }
       } else {
         console.error("Failed to upload image");
+      }
+
+      if (data.addhistory) {
+        submitHistory(result);
       }
     } catch (error) {
       console.error("An error occurred during upload:", error);
     }
+  };
+
+  const submitHistory = async (result) => {
+    const history = await axios.post(`${url}/history/add`, {
+      user_id: user.user_id,
+      diagnosis: result.diagnosis,
+      path: result.path,
+      date: result.date,
+    });
+    console.log(history);
   };
 
   return (
@@ -98,16 +113,19 @@ const Add = ({ title }) => {
                 <img src={preview} alt="Selected" className="preview-img" />
               </div>
             )}
-
-            <label>
-              <input
-                type="checkbox"
-                name="addhistory"
-                checked={data.addhistory}
-                onChange={onChangeHandler}
-              />
-              Add to Your History
-            </label>
+            {user.name === "Guest" ? (
+              <></>
+            ) : (
+              <label>
+                <input
+                  type="checkbox"
+                  name="addhistory"
+                  checked={data.addhistory}
+                  onChange={onChangeHandler}
+                />
+                Add to Your History
+              </label>
+            )}
 
             <input
               type="file"
@@ -121,8 +139,6 @@ const Add = ({ title }) => {
             </button>
           </form>
         </div>
-
-
       </div>
     </div>
   );
